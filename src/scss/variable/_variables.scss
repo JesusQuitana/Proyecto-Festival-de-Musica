@@ -1,0 +1,53 @@
+/*LETAS*/
+$letra_principal: "Montserrat", sans-serif;
+
+/*PAPLETA DE COLORES*/
+$verde:#4CB8B3;
+$rosa: #F53756;
+$amarillo: #fdda00;
+$morado: #752F97;
+$negro: #000000;
+$blanco: #FFFFFF;
+
+/*TAMAÑOS DE DISPOSITIVOS*/
+$telefono: 480px;
+$tablet: 768px;
+$escritorio: 1200px;
+$escritorioXL: 1600px;
+
+/*MIXING MEDIAS QUERIES*/
+@mixin tamañoTelefono {
+	@media (min-width: 0px) and (max-width: $telefono) {
+		@content;
+	}
+}
+
+@mixin tamañoTablet {
+	@media (min-width: 481px) and (max-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin tamañoEscritorio {
+	@media (min-width: 769px) and (max-width: $escritorio) {
+		@content;
+	}
+}
+
+@mixin tamañoEscritorioXL {
+	@media (min-width: 1201px) {
+		@content;
+	}
+}
+
+@mixin grid($columna, $gap : 5rem) {
+	display: grid;
+	grid-template-columns: repeat($columna, 1fr);
+	gap: $gap;
+}
+
+@mixin resetear-lista {
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
